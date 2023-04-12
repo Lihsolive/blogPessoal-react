@@ -1,9 +1,14 @@
 .titulo {
-    color: rgb(33, 29, 29);
+    color: rgb(45, 39, 39);
     text-align: center;
+    padding: 20px;
+    margin-top: 20px;
 }
 
 .img {
     width: 50%;
     border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+
 }
