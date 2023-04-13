@@ -1,14 +1,32 @@
-.titulo {
-    color: rgb(45, 39, 39);
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
+.container-principal {
+  min-height: calc(100vh - 48px);
+  width: 100vw;
+  background-image: url("./src/assets/background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.img {
-    width: 50%;
-    border-radius: 10px;
-    display: block;
-    margin: 0 auto;
-
+.botao-principal {
+  background-color: #f7593d !important;
+  border-radius: 20px !important;
+  color: white !important;
+  margin-top: 20px !important;
 }
+
+.botao-principal:hover {
+  background-color: #f94323 !important;
+  color: #240d63;
+}
+
+.img-principal {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  animation: float 4s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 35px); }
+    100%   { transform: translate(0, -0px); }
+  }
