@@ -15,7 +15,7 @@
 
 .botao-principal:hover {
   background-color: #f94323 !important;
-  color: #240d63;
+  color: #240d63 !important;
 }
 
 .img-principal {
