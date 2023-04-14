@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+.link-login {
+  text-decoration: none;
+}
+
+.container {
+  background-image: url("./src/assets/background.svg");
+  background-repeat: no-repeat;
+  width: 100vh;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.container-form {
+  background: white 0.35;
+  box-shadow: 0 8px 32px 0 rgba(10, 1, 48, 0.37);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(13.5px);
+  border-radius: 20px;
+  color: white;
+  padding: 30px 0;
+}
+
+.titulo-form {
+  color: white;
+  font-family: "Poppins", sans-serif !important;
+}
+
+input#usuario,
+input#senha {
+  border-radius: 10px;
+  border: 1px white solid;
+}
+
+label {
+  color: white !important;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.botao-enviar {
+  background-color: #f7593d !important;
+  border: none !important;
+  border-radius: 5px !important;
+  color: white !important;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.botao-enviar:hover {
+  background-color: #f94323 !important;
+  color: #240d63 !important;
+}
+
+.legenda-login {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 200 !important;
+}
+
+.legenda-cadastrar {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.legenda-cadastrar:hover {
+  color: #f94323;
+}

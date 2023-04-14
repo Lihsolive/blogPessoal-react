@@ -1,6 +1,7 @@
 import React from "react";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
@@ -17,31 +18,35 @@ function Navbar() {
 
           <div>
             <Box className="menu-links" display="flex">
-              <Box className="menu-item" mx={2} style={{ cursor: "pointer" }}>
-                <Typography variant="h6" color="inherit">
-                  home
-                </Typography>
-              </Box>
-              <Box className="menu-item" mx={2} style={{ cursor: "pointer" }}>
+              <Link to="/home" className="link-home">
+                <Box className="menu-item" mx={2}>
+                  <Typography variant="h6" color="inherit">
+                    home
+                  </Typography>
+                </Box>
+              </Link>
+              <Box className="menu-item" mx={2}>
                 <Typography variant="h6" color="inherit">
                   postagens
                 </Typography>
               </Box>
-              <Box className="menu-item" mx={2} style={{ cursor: "pointer" }}>
+              <Box className="menu-item" mx={2}>
                 <Typography variant="h6" color="inherit">
                   temas
                 </Typography>
               </Box>
-              <Box className="menu-item" mx={2} style={{ cursor: "pointer" }}>
+              <Box className="menu-item" mx={2}>
                 <Typography variant="h6" color="inherit">
                   cadastrar tema
                 </Typography>
               </Box>
-              <Box className="menu-item" mx={2} style={{ cursor: "pointer" }}>
-                <Typography variant="h6" color="inherit">
-                  logout
-                </Typography>
-              </Box>
+              <Link to="/login" className="link-logout">
+                <Box className="menu-item" mx={2}>
+                  <Typography variant="h6" color="inherit">
+                    logout
+                  </Typography>
+                </Box>
+              </Link>
             </Box>
           </div>
         </Toolbar>
