@@ -9,6 +9,7 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  margin: 0 40px;
 }
 
 .menu-logo {
@@ -17,21 +18,37 @@
 }
 
 .menu-item {
-  color: rgb(201, 201, 201);
+  color: white;
   margin-right: 40px;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
-.menu-item:nth-child(5) {
+/* .menu-item:nth-child(5) {
   border-radius: 20px;
   background-color: #f7593d;
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
+} */
+
+/* .menu-item:nth-child(5):hover {
+  background-color: #f94323;
+  color: #240d63;
+} */
+
+.link-logout {
+  border-radius: 5px;
+  background-color: #f7593d;
+  padding: 0 5px;
+  text-align: center;
 }
 
-.menu-item:nth-child(5):hover {
+.link-logout:hover {
   background-color: #f94323;
+}
+
+.link-logout .menu-item:hover {
   color: #240d63;
 }
 

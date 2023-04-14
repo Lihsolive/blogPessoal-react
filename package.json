@@ -16,12 +16,13 @@
     "@material-ui/lab": "4.0.0-alpha.60",
     "@mui/icons-material": "5.0.5",
     "@mui/material": "5.0.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^17",
+    "react-dom": "^17",
+    "react-router-dom": "^6"
   },
   "devDependencies": {
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
     "@vitejs/plugin-react": "^3.1.0",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"

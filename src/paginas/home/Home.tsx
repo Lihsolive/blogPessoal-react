@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid, Box, Typography, Button } from "@material-ui/core";
+import { Grid, Typography, Button } from "@material-ui/core";
+import { Box } from "@mui/material";
 import "./Home.css";
 
 function Home() {
@@ -25,7 +26,7 @@ function Home() {
         <Grid item xs={6}>
           <img className="img-principal" src="./src/assets/astronauta.png" alt="" />
         </Grid>
-        <Grid xs={12} style={{ backgroundColor: "white" }}></Grid>
+        <Grid xs={12} className="postagens" ></Grid>
       </Grid>
     </>
   );

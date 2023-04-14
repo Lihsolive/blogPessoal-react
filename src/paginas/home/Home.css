@@ -1,5 +1,6 @@
 .container-principal {
-  min-height: calc(100vh - 48px);
+  /* min-height: calc(100vh - 59.97px); */
+  min-height: 100vh;
   width: 100vw;
   background-image: url("./src/assets/background.svg");
   background-repeat: no-repeat;
@@ -8,14 +9,14 @@
 
 .botao-principal {
   background-color: #f7593d !important;
-  border-radius: 20px !important;
+  border-radius: 5px !important;
   color: white !important;
   margin-top: 20px !important;
 }
 
 .botao-principal:hover {
   background-color: #f94323 !important;
-  color: #240d63;
+  color: #240d63 !important;
 }
 
 .img-principal {
@@ -26,7 +27,11 @@
 }
 
 @keyframes float {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 35px); }
-    100%   { transform: translate(0, -0px); }
-  }
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 35px); }
+  100%   { transform: translate(0, -0px); }
+}
+
+/* .postagens{
+  background-color: white;
+ } */
