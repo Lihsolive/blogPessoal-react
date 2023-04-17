@@ -1,0 +1,35 @@
+.img-cadastro {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    animation: float 4s linear infinite;
+  }
+  
+  @keyframes float {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 35px); }
+    100%   { transform: translate(0, -0px); }
+  }
+
+.titulo-cadastro {
+    font-weight: bold !important;    
+}
+
+input#nome, input#email, input#senhaCadastro, input#confirmarSenha  {
+  border-radius: 10px;
+  border: 1px rgb(116, 0, 0) solid;
+}
+
+.btn-cancelar {
+    margin-right: 30px !important;
+}
+
+.btn-cadastrar {
+    background-color: #f7593d !important;
+    color: white !important;
+    font-family: "Poppins", sans-serif !important;
+}
+
+label#nome, label#email, label#senhaCadastro, label#confirmarSenha {
+    color: black;
+}
