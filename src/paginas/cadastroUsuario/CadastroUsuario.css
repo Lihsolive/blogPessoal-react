@@ -9,43 +9,66 @@
   background-position: center;
 }
 
+.container-form-cadastro {
+  display: flex;
+}
+
 .img-cadastro {
-    width: 500px;
-    height: 500px;
-    position: relative;
-    animation: float 4s linear infinite;
+  width: 600px;
+  height:600px;
+  position: relative;
+  /* animation: float 4s linear infinite; */
+}
+
+/* @keyframes float {
+  0% {
+    transform: translate(0, 0px);
   }
+  50% {
+    transform: translate(0, 35px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+} */
 
 .titulo-cadastro {
   color: white;
   font-family: "Poppins", sans-serif !important;
 }
-  
-  @keyframes float {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 35px); }
-    100%   { transform: translate(0, -0px); }
-  }
 
 .titulo-cadastro {
-    font-weight: bold !important;    
+  font-weight: bold !important;
 }
 
-input#nome, input#email, input#senhaCadastro, input#confirmarSenha  {
+input#nome,
+input#email,
+input#senhaCadastro,
+input#confirmarSenha {
   border-radius: 10px;
   border: 1px white solid;
 }
 
-
 .btn-cancelar {
-    background-color: rgba(46, 32, 129, 1) !important;
-    margin-right: 30px !important;
-    color: white !important;
-    font-family: "Poppins", sans-serif !important;
+  background-color: rgba(46, 32, 129, 1) !important;
+  margin-right: 30px !important;
+  color: white !important;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.btn-cancelar:hover {
+  background-color: rgb(61, 44, 154) !important;
+  margin-right: 30px !important;
+  color: white !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 .btn-cadastrar {
-    background-color: #f7593d !important;
-    color: white !important;
-    font-family: "Poppins", sans-serif !important;
+  background-color: #f7593d !important;
+  color: white !important;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.btn-cadastrar:hover {
+  background-color: #c52d3f !important;
 }
