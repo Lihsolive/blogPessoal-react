@@ -23,7 +23,7 @@
   padding: 30px 0;
 }
 
-.titulo-form {
+.titulo-login {
   color: white;
   font-family: "Poppins", sans-serif !important;
 }
@@ -32,6 +32,7 @@ input#usuario,
 input#senha {
   border-radius: 10px;
   border: 1px white solid;
+  color: white;
 }
 
 label {
@@ -39,7 +40,7 @@ label {
   font-family: "Poppins", sans-serif !important;
 }
 
-.botao-enviar {
+.btn-enviar {
   background-color: #f7593d !important;
   border: none !important;
   border-radius: 5px !important;
@@ -47,7 +48,7 @@ label {
   font-family: "Poppins", sans-serif !important;
 }
 
-.botao-enviar:hover {
+.btn-enviar:hover {
   background-color: #f94323 !important;
   color: #240d63 !important;
 }
@@ -59,8 +60,22 @@ label {
 
 .legenda-cadastrar {
   font-family: "Poppins", sans-serif !important;
+  color: white;
 }
 
 .legenda-cadastrar:hover {
   color: #f94323;
+}
+
+.img-login {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  animation: float 4s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 35px); }
+  100%   { transform: translate(0, -0px); }
 }
