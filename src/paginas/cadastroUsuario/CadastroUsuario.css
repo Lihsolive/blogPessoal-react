@@ -1,9 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+.container-cadastro {
+  background-image: url("./src/assets/background.svg");
+  background-repeat: no-repeat;
+  width: 100vh;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
 .img-cadastro {
     width: 500px;
     height: 500px;
     position: relative;
     animation: float 4s linear infinite;
   }
+
+.titulo-cadastro {
+  color: white;
+  font-family: "Poppins", sans-serif !important;
+}
   
   @keyframes float {
     0% { transform: translate(0,  0px); }
@@ -17,19 +33,19 @@
 
 input#nome, input#email, input#senhaCadastro, input#confirmarSenha  {
   border-radius: 10px;
-  border: 1px rgb(116, 0, 0) solid;
+  border: 1px white solid;
 }
 
+
 .btn-cancelar {
+    background-color: rgba(46, 32, 129, 1) !important;
     margin-right: 30px !important;
+    color: white !important;
+    font-family: "Poppins", sans-serif !important;
 }
 
 .btn-cadastrar {
     background-color: #f7593d !important;
     color: white !important;
     font-family: "Poppins", sans-serif !important;
-}
-
-label#nome, label#email, label#senhaCadastro, label#confirmarSenha {
-    color: black;
 }
