@@ -8,6 +8,13 @@ function Home() {
     <>
       <Grid className="container-principal" container direction="row" justifyContent="center" alignItems="center" >
         <Grid alignItems="center" item xs={6}>
+          {/* xs={} - corresponde a largura da tela. xs uma tela extremamente pequena, md, média e xl extremamente grande. No grid, a tela tem um total de 12. Dois grids xs{6}, significa que a tela será divida pela metade para os dois grids.  
+          - xs, extra-pequeno: 0px
+          - sm, pequeno: 600px
+          - md, médio: 960px
+          - lg, grande: 1280px
+          - xl, extra-grande: 1920px
+        */}
           <Box paddingX={20}>
             <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>
               Seja bem vindo(a)!

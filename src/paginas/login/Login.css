@@ -32,9 +32,10 @@ input#usuario,
 input#senha {
   border-radius: 10px;
   border: 1px white solid;
+  color: white;
 }
 
-label#usuario, label#senha {
+label {
   color: white !important;
   font-family: "Poppins", sans-serif !important;
 }
