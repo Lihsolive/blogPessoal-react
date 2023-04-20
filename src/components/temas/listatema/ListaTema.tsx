@@ -1,16 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  Card,
-  CardActions,
-  CardContent,
-  Button,
-  Typography,
-} from "@material-ui/core";
+import { Card, CardActions, CardContent, Button, Typography} from "@material-ui/core";
 import { Box } from "@mui/material";
+import Tema from "../../../models/Tema";
 import "./ListaTema.css";
+import useLocalStorage from "react-use-localstorage";
 
 function ListaTema() {
+  const [temas, setTemas] = useState<Tema[]>([]); //temas são armazenados dentro de um array
+  const [token, setToken] = useLocalStorage('token');
   return (
     <>
       <Box m={2}>
