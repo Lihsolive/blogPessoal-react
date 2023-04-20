@@ -6,7 +6,8 @@ interface UserLogin {
     usuario: string;
     senha: string;
     foto: string;
-    token?:  string | null //o ponto de interrogação significa que é um campo opcional, que pode receber string ou ser nula
+    token?:  string | null //o ponto de interrogação significa que é um campo opcional, ou seja, se estiver vazia, não afetará o objeto
+    //e nesse caso que pode receber string ou ser nula
 }
 
 export default UserLogin;

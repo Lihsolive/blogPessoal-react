@@ -14,15 +14,16 @@
 }
 
 .img-cadastro {
-  width: 600px;
-  height:600px;
+  width: 500px;
+  height:500px;
   position: relative;
   /* animation: float 4s linear infinite; */
+  transform: rotate(25deg);
 }
 
-/* @keyframes float {
+@keyframes float {
   0% {
-    transform: translate(0, 0px);
+    transform: translate(0, 0px );
   }
   50% {
     transform: translate(0, 35px);
@@ -30,7 +31,7 @@
   100% {
     transform: translate(0, -0px);
   }
-} */
+}
 
 .titulo-cadastro {
   color: white;

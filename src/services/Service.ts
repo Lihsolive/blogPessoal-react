@@ -24,8 +24,8 @@ export const login = async(url:any, dados:any, setDado:any) => { //arrow functio
 //função para listagem de postagem/temas
 export const busca = async(url:any, setDado:any, header:any) => { 
     //header passa o token para autorizar a requisição de listagem 
-    //O usuário só poderá listar postagens/temas se estiver autenticado
     const resposta = await api.get(url, header) //passa a rota e o token
+    //O usuário só poderá listar postagens/temas se estiver autenticado
     setDado(resposta.data) //retorna os dados e armazena dentro de resposta
 } 
 
