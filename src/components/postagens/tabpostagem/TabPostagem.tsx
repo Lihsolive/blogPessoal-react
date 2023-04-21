@@ -15,8 +15,8 @@ function TabPostagem() { //função para trocar o painel de exibição na home
       <TabContext value={value}> 
       {/* / TabContext irá iniciar com o valor 1, ou seja, exibindo o TabPanel 1 (ListaPostagem)*/}
         <AppBar position="static">
-          <Tabs centered indicatorColor="secondary" onChange={handleChange}> 
           {/* Para alterar o valor de value de acordo com o click */}
+          <Tabs centered indicatorColor="secondary" onChange={handleChange}> 
             <Tab label="Todas as postagens" value="1" />
             <Tab label="Sobre-nós" value="2" />
           </Tabs>
