@@ -65,11 +65,9 @@ function Login() {
             <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="usuario" label="usuário" variant="outlined" name="usuario" margin="normal"  fullWidth/>
             <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="senha" label="senha" variant="outlined" name="senha" margin="normal" type="password" fullWidth/>
             <Box marginTop={2} textAlign="center">
-              {/* <Link to="/home" className="link-login"> */}
               <Button className="btn-enviar" type="submit" variant="contained">
                 Logar
               </Button>
-              {/* </Link> */}
             </Box>
           </form>
           <Box display="flex" justifyContent="center" marginTop={3}>
