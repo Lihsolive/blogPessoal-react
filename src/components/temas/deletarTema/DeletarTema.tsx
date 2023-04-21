@@ -35,7 +35,7 @@ function DeletarTema() {
   async function findById(id: string) {
     buscaId(`/tema/${id}`, setTema, {
       headers: {
-        Authorization: token,
+        'Authorization': token,
       },
     });
   }
