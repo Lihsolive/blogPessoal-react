@@ -1,0 +1,16 @@
+.modal-postagem {
+  background: linear-gradient(
+    24deg,
+    rgba(10, 7, 73, 1) 0%,
+    rgba(46, 32, 129, 1) 100%
+  );
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.btnModal {
+  border-color: white !important;
+  background-color: white !important;
+}

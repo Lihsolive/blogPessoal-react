@@ -27,14 +27,12 @@ function Navbar() {
           <div>
             <Box className="menu-links" display="flex">
               <Link to="/home" className="link-home">
-                <Link to= "/home">
                 <Box className="menu-item" mx={2}>
                   <Typography variant="h6" color="inherit">
                     home
                   </Typography>
                 </Box>
                 </Link>
-              </Link>
               <Link to="/posts">
               <Box className="menu-item" mx={2}>
                 <Typography variant="h6" color="inherit">
