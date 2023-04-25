@@ -116,13 +116,14 @@ function CadastroPost() {
   }
 
   return (
-    <Container maxWidth="sm" className="modal-postagem">
+    <Container maxWidth="sm" className="modal-postagem" >
       <form onSubmit={onSubmit}>
         <Typography
           variant="h3"
           color="textSecondary"
           component="h1"
           align="center"
+          className="titulo-cadastro-post"
         >
           Formulário de cadastro postagem
         </Typography>

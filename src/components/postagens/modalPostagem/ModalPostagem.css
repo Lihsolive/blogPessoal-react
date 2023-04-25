@@ -1,10 +1,10 @@
-.modal-postagem {
+/* .modal-postagem {
   background: linear-gradient(
     24deg,
     rgba(10, 7, 73, 1) 0%,
     rgba(46, 32, 129, 1) 100%
   );
-}
+} */
 
 .cursor {
   cursor: pointer;
@@ -21,4 +21,14 @@
 .btnModal:hover {
   background-color: rgb(61, 44, 154) !important;
   color: #ffffff !important;
+}
+
+.makeStyles-paper-21 {
+  background-color: rgba(46, 32, 129, 1) !important;
+  border-radius: 10px;
+}
+
+.titulo-cadastro-post {
+  color: white !important;
+  font-size: 2rem !important;
 }
