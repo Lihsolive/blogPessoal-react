@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
-import {
-  Card,
-  CardActions,
-  CardContent,
-  Button,
-  Typography,
-} from "@material-ui/core";
 import { Box } from "@mui/material";
-import "./DeletarTema.css";
+import { Button, Card, CardActions, CardContent, Typography,
+} from "@material-ui/core";
 import { useNavigate, useParams } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
+
 import { buscaId, deleteId } from "../../../services/Service";
 import Tema from "../../../models/Tema";
+import "./DeletarTema.css";
 
 function DeletarTema() {
   let history = useNavigate();
@@ -20,7 +16,7 @@ function DeletarTema() {
   const [tema, setTema] = useState<Tema>();
 
   useEffect(() => {
-    if (token == "") {
+    if (token === "") {
       alert("Você precisa estar logado");
       history("/login");
     }
@@ -33,22 +29,28 @@ function DeletarTema() {
   }, [id]);
 
   async function findById(id: string) {
-    buscaId(`/tema/${id}`, setTema, {
+    await buscaId(`/temas/${id}`, setTema, {
       headers: {
         'Authorization': token,
       },
     });
   }
 
-  function sim() {
+  async function sim() {
     history("/temas");
-    deleteId(`/tema/${id}`, {
-      //importa o método da Service
-      headers: {
-        Authorization: token, //com o token, autoriza a exclusão
-      },
-    });
-    alert("Tema deletado com sucesso!");
+
+    try {
+      await deleteId(`/temas/${id}`, {
+        //importa o método da Service
+        headers: {
+          'Authorization': token //com o token, autoriza a exclusão
+        }
+      });
+      alert("Tema deletado com sucesso!");
+    
+    } catch (error) {
+      alert("Erro ao deletar!");
+    }
   }
 
   //faz apenas o redirecionamento
