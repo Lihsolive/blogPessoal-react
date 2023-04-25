@@ -2,14 +2,19 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Card, CardActions, CardContent, Button, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
-import useLocalStorage from "react-use-localstorage";
+import { useSelector } from "react-redux";
+
 import Tema from "../../../models/Tema";
 import { busca } from "../../../services/Service";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+
 import "./ListaTema.css";
 
 function ListaTema() {
   const [temas, setTemas] = useState<Tema[]>([]); //temas são armazenados dentro de um array
-  const [token, setToken] = useLocalStorage("token"); //para ter acesso ao token armazenado em localStorage e fazer uso dele no envio da requisição
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   let history = useNavigate();
 
   useEffect(() => {
@@ -25,7 +30,7 @@ function ListaTema() {
     await busca("/temas", setTemas, {
       //aguarda o método busca da Service
       headers: {
-        "Authorization": token,
+        Authorization: token,
       },
     });
   }
@@ -47,7 +52,8 @@ function ListaTema() {
                 Tema
               </Typography>
               <Typography variant="h5" component="h2">
-                {tema.descricao} {/* pega o tema dentro da variável tema e captura a descrição */}
+                {tema.descricao}{" "}
+                {/* pega o tema dentro da variável tema e captura a descrição */}
               </Typography>
             </CardContent>
             <CardActions>

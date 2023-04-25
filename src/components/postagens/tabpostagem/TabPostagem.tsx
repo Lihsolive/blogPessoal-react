@@ -16,21 +16,21 @@ function TabPostagem() { //função para trocar o painel de exibição na home
       {/* / TabContext irá iniciar com o valor 1, ou seja, exibindo o TabPanel 1 (ListaPostagem)*/}
         <AppBar position="static">
           {/* Para alterar o valor de value de acordo com o click */}
-          <Tabs centered indicatorColor="secondary" onChange={handleChange}> 
+          <Tabs centered onChange={handleChange} className="tab-barra-abas"> 
             <Tab label="Todas as postagens" value="1" />
             <Tab label="Sobre-nós" value="2" />
           </Tabs>
         </AppBar>
-        <TabPanel value="1">
-          <Box display="flex" flexWrap="wrap" justifyContent="center">
+        <TabPanel value="1" style={{backgroundColor: " rgba(10, 7, 73, 1) "}}>
+          <Box display="flex" flexWrap="wrap" justifyContent="center" >
             <ListaPostagem />
           </Box>
         </TabPanel>
-        <TabPanel value="2">
+        <TabPanel value="2" style={{backgroundColor: " rgba(10, 7, 73, 1) "}}>
           <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">
             Sobre-nós
           </Typography>
-          <Typography variant="body1" gutterBottom color="textPrimary" align="justify">
+          <Typography variant="body1" gutterBottom align="justify" className="texto-sobre">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             Dignissimos ut eveniet natus totam et, voluptate dicta tempore
             alias, odio nobis non eius cupiditate minima inventore pariatur!

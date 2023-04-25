@@ -1,23 +1,27 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core";
+import { Container, Button, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from "@material-ui/core";
 import { useNavigate, useParams } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
+import { useSelector } from "react-redux";
 
 import { busca, buscaId, post, put } from "../../../services/Service";
 import Tema from "../../../models/Tema";
 import Postagem from "../../../models/Postagem";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+
 import "./CadastroPost.css";
 
 function CadastroPost() {
   let history = useNavigate();
   const { id } = useParams<{ id: string }>();
   const [temas, setTemas] = useState<Tema[]>([]); //guarda todos os temas do backend
-  const [token, setToken] = useLocalStorage("token");
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
   //state que guarda apenas um tema escolhido específico
   const [tema, setTema] = useState<Tema>({
     id: 0,
-    descricao: ""
+    descricao: "",
   });
 
   const [postagem, setPostagem] = useState<Postagem>({
@@ -25,7 +29,7 @@ function CadastroPost() {
     titulo: "",
     texto: "",
     data: "",
-    tema: null
+    tema: null,
   });
 
   useEffect(() => {
@@ -38,13 +42,13 @@ function CadastroPost() {
   useEffect(() => {
     setPostagem({
       ...postagem,
-      tema: tema
+      tema: tema,
     });
   }, [tema]);
 
   useEffect(() => {
     //se o id for diferente de indefinido, será feita uma atualização
-    getTemas()
+    getTemas();
     if (id !== undefined) {
       findByIdPostagem(id);
     }
@@ -53,8 +57,8 @@ function CadastroPost() {
   async function getTemas() {
     await busca("/temas", setTemas, {
       headers: {
-        "Authorization": token
-      }
+        Authorization: token,
+      },
     });
   }
 
@@ -62,8 +66,8 @@ function CadastroPost() {
   async function findByIdPostagem(id: string) {
     await buscaId(`/postagens/${id}`, setPostagem, {
       headers: {
-        "Authorization": token
-      }
+        Authorization: token,
+      },
     });
   }
 
@@ -72,7 +76,7 @@ function CadastroPost() {
     setPostagem({
       ...postagem,
       [e.target.name]: e.target.value,
-      tema: tema
+      tema: tema,
     });
   }
 
@@ -84,11 +88,10 @@ function CadastroPost() {
       try {
         await put("/postagens", postagem, setPostagem, {
           headers: {
-            "Authorization": token
-          }
+            Authorization: token,
+          },
         });
         alert("Postagem atualizada com sucesso!");
-
       } catch (error) {
         alert("Erro ao atualizar, verifique os campos!");
       }
@@ -97,8 +100,8 @@ function CadastroPost() {
       try {
         await post("/postagens", postagem, setPostagem, {
           headers: {
-            "Authorization": token,
-          }
+            Authorization: token,
+          },
         });
         alert("Postagem cadastrada com sucesso!");
       } catch (error) {
@@ -153,7 +156,7 @@ function CadastroPost() {
             onChange={(e) =>
               buscaId(`/temas/${e.target.value}`, setTema, {
                 headers: {
-                  "Authorization": token,
+                  Authorization: token,
                 },
               })
             }
@@ -163,7 +166,7 @@ function CadastroPost() {
             ))}
           </Select>
           <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-          <Button type="submit" variant="contained" color="secondary" >
+          <Button type="submit" variant="contained" color="secondary">
             Finalizar
           </Button>
         </FormControl>

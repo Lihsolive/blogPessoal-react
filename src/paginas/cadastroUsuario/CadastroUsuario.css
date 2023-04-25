@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 
 .container-cadastro {
-  background-image: url("./src/assets/background.svg");
-  background-repeat: no-repeat;
-  width: 100vh;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
+    background-image: url("./src/assets/background.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:100vh;
+    width: 100vh;
+    overflow: hidden
 }
 
 .container-form-cadastro {

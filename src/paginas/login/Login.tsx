@@ -2,16 +2,23 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { Grid, TextField, Typography, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
+import { useDispatch } from "react-redux";
+
 import { login } from "../../services/Service";
 import UserLogin from "../../models/UserLogin";
+import { addToken } from "../../store/tokens/actions";
+
 import "./Login.css";
 
 function Login() {
-  let history = useNavigate(); //redireciona o usuário para uma determinada página
+  let history = useNavigate(); //redireciona o usuário para uma determinada página 
+
+  const dispatch =useDispatch();//*
   
-  //useLocalStorage - armazenamento local - armazena uma informação, no caso o token, no navegador em Local Storage. 
-  const [token, setToken] = useLocalStorage("token"); 
+  const [token, setToken] = useState(""); 
+  // const [token, setToken] = useLocalStorage("token"); 
+
+
   //const [token, setToken] - imutabilidade - é uma função Hook cujo objetivo é criar uma nova versão da variável com outras informações, sem alterar a variável raiz.
   const [userLogin, setUserLogin] = useState<UserLogin>({ //useState - observa o estado da variável. Exemplo, se estava vazio e de repente recebe uma informação. Irá renderizar as alterações
   //userLogin = variável. É um objeto da classe UserLogin
@@ -36,6 +43,7 @@ function Login() {
 
   useEffect(()=>{ //useEffect - executa uma função sempre que uma variável sobre uma alteração
     if(token != ''){ //se o token for diferente de vazio
+      dispatch(addToken(token))
         history('/home') //haverá o redirecionamento para a página home
     }
 }, [token]) //se esse array - [token] - for modificado, o useEffect é acionado

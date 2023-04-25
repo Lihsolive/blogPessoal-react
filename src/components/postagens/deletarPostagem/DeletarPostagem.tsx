@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
-import { Button, Card, CardActions, CardContent, Typography,} from "@material-ui/core";
+import { Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
 import { useNavigate, useParams } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
+import { useSelector } from "react-redux";
 
 import Postagem from "../../../models/Postagem";
 import { buscaId, deleteId } from "../../../services/Service";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+
 import "./DeletarPostagem.css";
 
 function DeletarPostagem() {
   let history = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const [token, setToken] = useLocalStorage("token");
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   const [post, setPost] = useState<Postagem>();
 
   useEffect(() => {
@@ -30,8 +34,8 @@ function DeletarPostagem() {
   async function findById(id: string) {
     buscaId(`/postagens/${id}`, setPost, {
       headers: {
-        'Authorization': token
-      }
+        Authorization: token,
+      },
     });
   }
 
@@ -39,13 +43,13 @@ function DeletarPostagem() {
     history("/posts"); //rota do front-end
 
     try {
-      await deleteId(`/postagens/${id}`, { //rota do back-end
+      await deleteId(`/postagens/${id}`, {
+        //rota do back-end
         headers: {
-          'Authorization': token
-        }
+          Authorization: token,
+        },
       });
       alert("Tema deletado com sucesso!");
-
     } catch (error) {
       alert("Erro ao deletar!");
     }

@@ -1,27 +1,38 @@
 import React, { useEffect } from "react";
 import { Grid, Typography, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
-import "./Home.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import TabPostagem from "../../components/postagens/tabPostagem/TabPostagem";
 import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostagem";
-import { useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
+import { TokenState } from "../../store/tokens/tokensReducer";
+
+import "./Home.css";
 
 function Home() {
-
   let history = useNavigate();
-  const [token, setToken] = useLocalStorage("token");
+  //useSelector - acessa o Store, pega o token e atribui a constante
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado!")
-      history("/login")
+      alert("Você precisa estar logado!");
+      history("/login");
     }
-  }, [token])
+  }, [token]);
 
   return (
     <>
-      <Grid className="container-principal" container direction="row" justifyContent="center" alignItems="center" >
+      <Grid
+        className="container-principal"
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
         <Grid alignItems="center" item xs={6}>
           {/* xs={} - corresponde a largura da tela. xs uma tela extremamente pequena, md, média e xl extremamente grande. No grid, a tela tem um total de 12. Dois grids xs{6}, significa que a tela será divida pela metade para os dois grids.  
           - xs, extra-pequeno: 0px
@@ -31,10 +42,24 @@ function Home() {
           - xl, extra-grande: 1920px
         */}
           <Box paddingX={20}>
-            <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>
+            <Typography
+              variant="h3"
+              gutterBottom
+              color="textPrimary"
+              component="h3"
+              align="center"
+              style={{ color: "white", fontWeight: "bold" }}
+            >
               Seja bem vindo(a)!
             </Typography>
-            <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "white", fontWeight: "bold" }}>
+            <Typography
+              variant="h5"
+              gutterBottom
+              color="textPrimary"
+              component="h5"
+              align="center"
+              style={{ color: "white", fontWeight: "bold" }}
+            >
               expresse aqui os seus pensamentos e opiniões!
             </Typography>
           </Box>
@@ -42,15 +67,21 @@ function Home() {
             <Box marginRight={1}>
               <ModalPostagem />
             </Box>
-            <Button className="botao-principal" variant="outlined" >
-              Ver Postagens
-            </Button>
+            <Link to="/posts">
+              <Button className="botao-principal" variant="outlined">
+                Ver Postagens
+              </Button>
+            </Link>
           </Box>
         </Grid>
         <Grid item xs={6}>
-          <img className="img-principal" src="./src/assets/astronauta.png" alt="" />
+          <img
+            className="img-principal"
+            src="./src/assets/astronauta.png"
+            alt=""
+          />
         </Grid>
-        <Grid xs={12} className="postagens" >
+        <Grid xs={12} className="postagens">
           <TabPostagem />
         </Grid>
       </Grid>
