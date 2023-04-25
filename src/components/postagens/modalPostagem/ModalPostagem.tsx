@@ -5,6 +5,7 @@ import { Box, Modal } from "@mui/material";
 import CloseIcon from "@material-ui/icons/Close";
 
 import CadastroPost from "../cadastroPost/CadastroPost";
+
 import "./ModalPostagem.css";
 
 //centraliza a modal

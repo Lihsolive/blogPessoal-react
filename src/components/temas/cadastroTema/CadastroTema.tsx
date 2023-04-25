@@ -1,17 +1,21 @@
 import React, { ChangeEvent, useState, useEffect } from "react";
 import { Button, Container, Typography, TextField } from "@material-ui/core";
 import { useNavigate, useParams } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
+import { useSelector } from "react-redux";
 
 import { buscaId, post, put } from "../../../services/Service";
 import Tema from "../../../models/Tema";
+import { TokenState } from "../../../store/tokens/tokensReducer";
 
 import "./CadastroTema.css";
 
 function CadastroTema() {
   let history = useNavigate();
   const { id } = useParams<{ id: string }>(); //useParams - identifica e captura umaa informação enviada pela URL. No caso, o id
-  const [token, setToken] = useLocalStorage("token");
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+
   const [tema, setTema] = useState<Tema>({
     id: 0, //apesar de ser auto_increment, é necessário começar com um número, pois é um campo obrigatório. O back end depois irá sobrepor esse valor, pois é sua responsabilidade
     descricao: "",
@@ -27,7 +31,8 @@ function CadastroTema() {
 
   //monitora o id
   useEffect(() => {
-    if (id !== undefined) { //verifica se há um id ou não
+    if (id !== undefined) {
+      //verifica se há um id ou não
       findById(id);
     }
   }, [id]);
