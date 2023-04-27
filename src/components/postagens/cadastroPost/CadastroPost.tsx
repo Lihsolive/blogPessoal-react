@@ -2,6 +2,7 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { Container, Button, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from "@material-ui/core";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 import { busca, buscaId, post, put } from "../../../services/Service";
 import Tema from "../../../models/Tema";
@@ -34,7 +35,16 @@ function CadastroPost() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado!");
+      toast.error('Você precisa estar logado!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined
+      })
       history("/login");
     }
   }, [token]);
@@ -91,9 +101,27 @@ function CadastroPost() {
             Authorization: token,
           },
         });
-        alert("Postagem atualizada com sucesso!");
+        toast.success("Postagem atualizada com sucesso!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined
+        })
       } catch (error) {
-        alert("Erro ao atualizar, verifique os campos!");
+        toast.error("Erro ao atualizar, verifique os campos!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined
+        })
       }
     } else {
       //caso não tenha id, é criado uma postagem
@@ -103,9 +131,27 @@ function CadastroPost() {
             Authorization: token,
           },
         });
-        alert("Postagem cadastrada com sucesso!");
+        toast.success("Postagem cadastrada com sucesso!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined
+        })
       } catch (error) {
-        alert("Erro ao cadastrar, verifique os campos!");
+        toast.error("Erro ao cadastrar, verifique os campos!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined
+        })
       }
     }
     back();

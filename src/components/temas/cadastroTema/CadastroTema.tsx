@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState, useEffect } from "react";
 import { Button, Container, Typography, TextField } from "@material-ui/core";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 import { buscaId, post, put } from "../../../services/Service";
 import Tema from "../../../models/Tema";
@@ -24,7 +25,16 @@ function CadastroTema() {
   useEffect(() => {
     //verifica se o usuário está logado
     if (token === "") {
-      alert("Você precisa estar logado");
+      toast.error("Você precisa estar logado!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
       history("/login");
     }
   }, [token]);
@@ -64,10 +74,31 @@ function CadastroTema() {
           },
         });
 
-        alert("Tema atualizado com sucesso");
+        toast.success("Tema atualizado com sucesso!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
       } catch (error) {
         console.log(`Error: ${error}`);
-        alert("Erro, por favor verifique a quantidade mímima de caracteres!");
+        toast.error(
+          "Erro, por favor verifique a quantidade mímima de caracteres!",
+          {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+          }
+        );
       }
     } else {
       try {
@@ -76,10 +107,31 @@ function CadastroTema() {
             Authorization: token,
           },
         });
-        alert("Tema cadastrado com sucesso");
+        toast.success("Tema cadastrado com sucesso!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
       } catch (error) {
         console.log(`Error: $(error)`);
-        alert("Erro, por vafor verifique a quantidade mímima de caracteres!");
+        toast.error(
+          "Erro, por favor verifique a quantidade mímima de caracteres!",
+          {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+          }
+        );
       }
     }
     back();

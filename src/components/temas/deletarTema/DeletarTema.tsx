@@ -4,6 +4,7 @@ import { Button, Card, CardActions, CardContent, Typography,
 } from "@material-ui/core";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 import { buscaId, deleteId } from "../../../services/Service";
 import Tema from "../../../models/Tema";
@@ -21,7 +22,16 @@ function DeletarTema() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado");
+      toast.error("Você precisa estar logado!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
       history("/login");
     }
   }, [token]);
@@ -50,10 +60,28 @@ function DeletarTema() {
           'Authorization': token //com o token, autoriza a exclusão
         }
       });
-      alert("Tema deletado com sucesso!");
+      toast.success("Tema deletado com sucesso!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
     
     } catch (error) {
-      alert("Erro ao deletar!");
+      toast.error("Erro ao deletar!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
     }
   }
 

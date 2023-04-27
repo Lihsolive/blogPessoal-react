@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Card, CardActions, CardContent, Button, Typography } from "@material-ui/core";
+import {
+  Card,
+  CardActions,
+  CardContent,
+  Button,
+  Typography,
+} from "@material-ui/core";
 import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 import Tema from "../../../models/Tema";
 import { busca } from "../../../services/Service";
@@ -20,7 +27,16 @@ function ListaTema() {
   useEffect(() => {
     //verifica se o usuário está logado, do contrário, não será possível fazer a listagem
     if (token === "") {
-      alert("Você precisa estar logado!");
+      toast.error("Você precisa estar logado!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
       history("/login");
     }
   }, [token]);
