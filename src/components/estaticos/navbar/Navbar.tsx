@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/actions";
@@ -19,7 +20,16 @@ function Navbar() {
 
   function goLogout() {
     dispatch(addToken("")); //zera o valor do token
-    alert("Usuário deslogado");
+    toast.info('Usuário deslogado', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: "colored",
+      progress: undefined
+    })
     history("/login");
   }
 

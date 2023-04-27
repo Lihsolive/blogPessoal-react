@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
 
 import Navbar from "./components/estaticos/navbar/Navbar";
 import Footer from "./components/estaticos/footer/Footer";
@@ -12,14 +14,15 @@ import CadastroPost from "./components/postagens/cadastroPost/CadastroPost";
 import CadastroTema from "./components/temas/cadastroTema/CadastroTema";
 import DeletarPostagem from "./components/postagens/deletarPostagem/DeletarPostagem";
 import DeletarTema from "./components/temas/deletarTema/DeletarTema";
-import { Provider } from "react-redux";
 import store from "./store/store";
 
+import 'react-toastify/dist/ReactToastify.css'
 import "./App.css";
 
 function App() {
   return (
-    <Provider store={store}>
+    <Provider store={store}> {/* para fazer o redux conectar com a aplicação React */}
+    <ToastContainer />
     <BrowserRouter>
       <Navbar />
       <div style={{ minHeight: "100vh" }}>
