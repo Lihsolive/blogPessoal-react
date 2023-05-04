@@ -8,7 +8,7 @@ import Footer from "./components/estaticos/footer/Footer";
 import CadastroUsuario from "./paginas/cadastroUsuario/CadastroUsuario";
 import Home from "./paginas/home/Home";
 import Login from "./paginas/login/Login";
-import ListaTema from "./components/temas/listaTema/ListaTema";
+import ListaTema from "./components/temas/listatema/ListaTema";
 import ListaPostagem from "./components/postagens/listaPostagem/ListaPostagem";
 import CadastroPost from "./components/postagens/cadastroPost/CadastroPost";
 import CadastroTema from "./components/temas/cadastroTema/CadastroTema";
