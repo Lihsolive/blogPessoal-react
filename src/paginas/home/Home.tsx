@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
-import TabPostagem from "../../components/postagens/tabPostagem/TabPostagem";
+import TabPostagem from "../../components/postagens/tabpostagem/TabPostagem";
 import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostagem";
 import { TokenState } from "../../store/tokens/tokensReducer";
 
