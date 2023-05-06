@@ -153,7 +153,7 @@ function Login() {
         </Box>
       </Grid>
       <Grid xs={5} alignItems="center" className="img">
-        <img className="img-login" src="./src/assets/naveEspacial.svg" alt="" />
+        <img className="img-login" src="https://svgshare.com/i/sr3.svg" alt="" />
       </Grid>
     </Grid>
   );

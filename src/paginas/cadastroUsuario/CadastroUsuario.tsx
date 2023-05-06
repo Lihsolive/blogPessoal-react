@@ -91,7 +91,7 @@ function CadastroUsuario() {
       alignItems="center"
     >
       <Grid item xs={6} className="img-cadastro">
-        <img className="img-cadastro" src="./src/assets/foguete.svg" alt="" />
+        <img className="img-cadastro" src="https://svgshare.com/i/sr_.svg" alt="" />
       </Grid>
       <Grid className="container-form-cadastro" item xs={4} alignItems="center">
         <Box>
