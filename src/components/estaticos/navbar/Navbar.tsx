@@ -40,7 +40,7 @@ function Navbar() {
       <AppBar position="static" className="bg-menu">
         <Toolbar variant="dense" className="container-menu">
           <Box style={{ cursor: "pointer" }}>
-            <img className="menu-logo" src="./src/assets/logo.svg" alt="Logo" />
+            <img className="menu-logo" src=".\src\assets\logo.svg" alt="Logo" />
           </Box>
 
           <div>
