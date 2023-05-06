@@ -87,7 +87,7 @@ function Home() {
         <Grid item xs={6}>
           <img
             className="img-principal"
-            src="./src/assets/astronauta.png"
+            src="https://svgshare.com/i/sp4.svg"
             alt=""
           />
         </Grid>
