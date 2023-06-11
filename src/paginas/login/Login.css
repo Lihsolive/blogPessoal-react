@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 
-.link-login {
-  text-decoration: none;
-}
-
 .container {
   background-image: url("https://svgshare.com/i/sqC.svg");
   background-repeat: no-repeat;
@@ -11,7 +7,7 @@
   height: 100vh;
   background-size: cover;
   background-position: center;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .container-form-login {
@@ -26,6 +22,7 @@
 }
 
 .titulo-login {
+  padding-bottom: 30px;
   color: white;
   font-family: "Poppins", sans-serif !important;
 }
@@ -35,11 +32,6 @@ input#senha {
   border-radius: 10px;
   border: 1px white solid;
   color: white;
-}
-
-label {
-  color: white !important;
-  font-family: "Poppins", sans-serif !important;
 }
 
 .btn-enviar {
@@ -69,15 +61,56 @@ label {
   color: #f94323;
 }
 
+.titulo-img {
+  font-size: 1rem !important;
+  font-family: "Poppins", sans-serif !important;
+  color: white;
+}
+
 .img-login {
   width: 500px;
   height: 500px;
   position: relative;
-  /* animation: float 4s linear infinite; */
+  animation: float 4s linear infinite;
 }
 
-/* @keyframes float {
-  0% { transform: translate(0,  0px); }
-  50%  { transform: translate(0, 35px); }
-  100%   { transform: translate(0, -0px); }
-} */
+@keyframes float {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 35px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+@media (max-width: 1205px) {
+  .img-login {
+    width: 300px;
+    height: 300px;
+  }
+  .legenda-login,
+  .legenda-cadastrar {
+    font-size: 12px !important;
+  }
+  .container-inputs {
+    padding: 0 70px !important;
+  }
+}
+@media (max-width:400px) {
+  .img-login {
+    display: none;
+  }
+  .legenda-login,
+  .legenda-cadastrar {
+    font-size: 10px !important;
+  }
+  .titulo-img {
+    display: none;
+  }
+  .container-inputs {
+    padding: 0 40px !important;
+  }
+}

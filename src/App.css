@@ -7,3 +7,8 @@
 a {
   text-decoration: none;
 }
+
+label {
+  color: white !important;
+  font-family: "Poppins", sans-serif !important;
+}

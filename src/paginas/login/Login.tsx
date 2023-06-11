@@ -89,7 +89,7 @@ function Login() {
       justifyContent="center"
       alignItems="center"
     >
-      <Grid className="container-form-login" alignItems="center" xs={6}>
+      <Grid className="container-form-login" alignItems="center" xs={12} md={6} xl={6} >
         <Box className="container-inputs" paddingX={20}>
           <form onSubmit={onSubmit}>
             <Typography
@@ -152,8 +152,19 @@ function Login() {
           </Box>
         </Box>
       </Grid>
-      <Grid xs={5} alignItems="center" className="img">
+      <Grid xs={6} md={6} xl={6} alignItems="center" className="img">
+      <Typography
+              className="titulo-img"
+              variant="h3"
+              gutterBottom
+              component="h3"
+              align="center"
+            >
+              Conecte-se para uma viagem incrível!!! 
+            </Typography>
+      <Box display="flex" justifyContent="center" marginTop={1} paddingX={5}>
         <img className="img-login" src="https://svgshare.com/i/sr3.svg" alt="" />
+        </Box>
       </Grid>
     </Grid>
   );
